@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - BloodChain</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="/static/css/admin_dashboard.css" />
+</head>
+
+<body class="dashboard-body">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">🩸</div>
+            <h2>Admin Panel</h2>
+        </div>
+        <nav class="nav-links">
+            <a href="#" class="active" data-tab="overview"><i class="fas fa-chart-pie"></i> Overview</a>
+            <a href="#" data-tab="donors"><i class="fas fa-users"></i> Donors</a>
+            <a href="#" data-tab="hospitals"><i class="fas fa-hospital"></i> Hospitals</a>
+            <a href="#" data-tab="bloodbanks"><i class="fas fa-clinic-medical"></i> Blood Banks</a>
+            <a href="#" id="logoutBtn" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <div class="header-content">
+                <h1>Welcome, Super Admin</h1>
+                <p>Manage and monitor the BloodChain network ecosystem.</p>
+            </div>
+        </header>
+
+        <!-- 📊 Overview Section -->
+        <section id="overview" class="tab-content active">
+            <div class="card">
+                <h2><i class="fas fa-analytics"></i> Network Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="number pulse" id="donorCount">0</div>
+                        <div class="label">Total Donors</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number pulse" id="hospitalCount">0</div>
+                        <div class="label">Total Hospitals</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number pulse" id="bloodbankCount">0</div>
+                        <div class="label">Total Blood Banks</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🧍 Donors Section -->
+        <section id="donors" class="tab-content">
+            <div class="card">
+                <div class="section-header">
+                    <h2><i class="fas fa-users"></i> Registered Donors</h2>
+                    <button class="btn small" onclick="downloadReport('donors')">
+                        <i class="fas fa-file-csv"></i> Download CSV
+                    </button>
+                </div>
+                <div class="table-container">
+                    <table class="block-table" id="donorTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Blood Group</th>
+                                <th>City</th>
+                                <th>Last Donation</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🏥 Hospitals Section -->
+        <section id="hospitals" class="tab-content">
+            <div class="card">
+                <div class="section-header">
+                    <h2><i class="fas fa-hospital"></i> Network Hospitals</h2>
+                    <button class="btn small" onclick="downloadReport('hospitals')">
+                        <i class="fas fa-file-csv"></i> Download CSV
+                    </button>
+                </div>
+                <div class="table-container">
+                    <table class="block-table" id="hospitalTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>City</th>
+                                <th>Active Requests</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🧫 Blood Banks Section -->
+        <section id="bloodbanks" class="tab-content">
+            <div class="card">
+                <div class="section-header">
+                    <h2><i class="fas fa-clinic-medical"></i> Registered Blood Banks</h2>
+                    <button class="btn small" onclick="downloadReport('bloodbanks')">
+                        <i class="fas fa-file-csv"></i> Download CSV
+                    </button>
+                </div>
+                <div class="table-container">
+                    <table class="block-table" id="bloodbankTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>City</th>
+                                <th>Capacity</th>
+                                <th>Available Stock</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/js/admin_dashboard.js"></script>
+</body>
+
+</html>

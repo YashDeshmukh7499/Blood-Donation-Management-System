@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏥 Hospital Login - BloodChain</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body class="login-body hospital-login">
+
+<div class="login-container hospital-login">
+    <h2>🏥 Hospital Login</h2>
+
+    <form id="hospitalLoginForm">
+        <label for="hospitalId">Hospital ID</label>
+        <input type="text" id="hospitalId" placeholder="Enter hospital ID" required>
+
+        <label for="password">Password</label>
+        <div class="password-container">
+            <input type="password" id="password" placeholder="Enter password" required>
+            <button type="button" class="toggle-password" id="togglePassword">👁️</button>
+        </div>
+
+        <p id="errorMsg" style="color:red; font-size:14px; margin:6px 0;"></p>
+
+        <button type="submit" class="btn">Login</button>
+    </form>
+
+    <p class="note">
+        Don't have an account?
+        <a href="signup.html">Sign Up here</a>
+    </p>
+
+    <a href="index.html" class="back-link">← Back to Home</a>
+</div>
+
+<!-- Load shared JavaScript -->
+<script src="/static/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain records - BloodChain</title>
+    <link rel="stylesheet" href="/static/css/user_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-tint" style="font-size: 2rem; color: #e53935;"></i>
+            </div>
+            <h2>BloodChain</h2>
+        </div>
+
+        <nav class="nav-links">
+            <a href="user_dashboard.html">
+                <i class="fas fa-home"></i>Dashboard
+            </a>
+            <a href="user_profile.html">
+                <i class="fas fa-user"></i>Profile
+            </a>
+            <a href="user_donate.html">
+                <i class="fas fa-tint"></i>Donate Blood
+            </a>
+            <a href="user_blockchain.html" class="active">
+                <i class="fas fa-link"></i>Blockchain Records
+            </a>
+            <a href="user_certificates.html">
+                <i class="fas fa-certificate"></i>My Certificates
+            </a>
+            <a href="user_statistics.html">
+                <i class="fas fa-chart-bar"></i>Statistics
+            </a>
+            <a href="#" id="logoutBtn" class="logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <h1>Blockchain Records 🔒</h1>
+            <p>View your immutable donation history secured by blockchain technology.</p>
+        </header>
+
+        <!-- Blockchain Records -->
+        <section id="blockchain" class="card">
+            <h2><i class="fas fa-link" style="margin-right: 10px;"></i>Donation History</h2>
+            <p>Below are your recent donation records stored securely on the blockchain.</p>
+            <table class="block-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Donation Date</th>
+                        <th>Blood Unit ID</th>
+                        <th>Units (ml)</th>
+                        <th>Location</th>
+                        <th>Block Hash</th>
+                        <th>Current Status</th>
+                    </tr>
+                </thead>
+                <tbody id="blockchainRecordsList">
+                    <!-- Loaded dynamically -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="/static/js/user_dashboard.js"></script>
+
+</body>
+
+</html>

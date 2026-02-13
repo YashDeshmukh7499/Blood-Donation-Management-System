@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Donations - BloodChain</title>
+    <link rel="stylesheet" href="../static/css/hospital.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-hospital" style="font-size: 2rem; color: #e53935;"></i>
+            </div>
+            <h2>BloodChain</h2>
+        </div>
+
+        <nav class="nav-links">
+            <a href="hospital_dashboard.html">
+                <i class="fas fa-chart-bar"></i>Dashboard Overview
+            </a>
+            <a href="hospital_donations.html" class="active">
+                <i class="fas fa-tint"></i>View Donations
+            </a>
+            <a href="hospital_approvals.html">
+                <i class="fas fa-check-circle"></i>Approve Donations
+            </a>
+            <a href="hospital_requests.html">
+                <i class="fas fa-plus-circle"></i>Request Blood
+            </a>
+            <a href="hospital_blockchain.html">
+                <i class="fas fa-link"></i>Verify Blockchain
+            </a>
+            <a href="hospital_inventory.html">
+                <i class="fas fa-prescription-bottle"></i>Blood Inventory
+            </a>
+            <a href="index.html" class="logout">
+                <i class="fas fa-sign-out-alt"></i>Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <h1>Donation Records 🩸</h1>
+            <p>View and track history of blood donations and usage.</p>
+        </header>
+
+        <!-- View Donations -->
+        <section id="donations" class="card">
+            <h2><i class="fas fa-tint" style="margin-right: 10px;"></i>All Donation Records</h2>
+            <table class="block-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Donor Name</th>
+                        <th>Blood Group</th>
+                        <th>Units</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                        <th>Blockchain Hash</th>
+                    </tr>
+                </thead>
+                <tbody id="donationsTableBody">
+                    <!-- Data populated by JS -->
+                    <tr>
+                        <td colspan="8" style="text-align:center;">Loading records...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <script src="../static/js/hospital_dashboard.js"></script>
+
+</body>
+
+</html>

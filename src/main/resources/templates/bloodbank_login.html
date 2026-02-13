@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Login - BloodChain</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="login-body bloodbank-login">
+
+<div class="login-container bloodbank-login">
+    <h2>🩸 Blood Bank Login</h2>
+
+    <form id="bloodbankLoginForm" action="#" method="post">
+        <label for="bankId">Blood Bank ID</label>
+        <input type="text" id="bankId" placeholder="Enter blood bank ID" required>
+
+        <label for="password">Password</label>
+        <div class="password-container">
+            <input type="password" id="password" placeholder="Enter password" required>
+            <button type="button" class="toggle-password" id="togglePassword">👁️</button>
+        </div>
+
+        <button type="button" class="btn" onclick="window.location.href='bloodbank_dashboard.html'">Login</button>
+    </form>
+
+    <p class="note">
+        Don't have an account?
+        <a href="signup.html">Sign Up here</a>
+    </p>
+
+    <a href="index.html" class="back-link">← Back to Home</a>
+</div>
+
+<script src="/static/js/script.js"></script>
+
+</body>
+</html>

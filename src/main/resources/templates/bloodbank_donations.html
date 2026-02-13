@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Donations - BloodChain</title>
+    <link rel="stylesheet" href="/static/css/blood_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="/static/js/bloodbank_dashboard.js" defer></script>
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-prescription-bottle" style="font-size: 2rem; color: #4facfe;"></i>
+            </div>
+            <h2>BloodChain</h2>
+        </div>
+
+        <nav class="nav-links">
+            <a href="bloodbank_dashboard.html">
+                <i class="fas fa-chart-bar"></i>Dashboard Overview
+            </a>
+            <a href="bloodbank_inventory.html">
+                <i class="fas fa-tint"></i>Manage Inventory
+            </a>
+            <a href="bloodbank_donations.html" class="active">
+                <i class="fas fa-inbox"></i>Incoming Donations
+            </a>
+            <a href="bloodbank_dispatch.html">
+                <i class="fas fa-truck"></i>Dispatch / Supply
+            </a>
+            <a href="bloodbank_profile.html">
+                <i class="fas fa-id-card"></i>Bank Profile
+            </a>
+            <a href="bloodbank_blockchain.html">
+                <i class="fas fa-link"></i>Verify Blockchain
+            </a>
+            <a href="index.html" class="logout">
+                <i class="fas fa-sign-out-alt"></i>Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <h1>Incoming Donations 📥</h1>
+            <p>Process pending donations, verify donors, and mark completions.</p>
+        </header>
+
+        <!-- Pending Donations -->
+        <section id="pending-donations" class="card">
+            <div class="card-header" style="margin-bottom: 15px;">
+                <h2><i class="fas fa-clock" style="margin-right: 10px; color: #f39c12;"></i>Pending Donations</h2>
+                <!-- Refresh handled by JS loadPendingDonations -->
+            </div>
+            <ul id="pendingDonationsList" style="list-style: none; padding: 0;">
+                <li style="text-align: center; padding: 20px; color: #777;">Loading donations...</li>
+            </ul>
+        </section>
+
+        <!-- Approved/Scheduled Donations (Ready for Completion) -->
+        <section id="approved-donations" class="card">
+            <div class="card-header" style="margin-bottom: 15px;">
+                <h2><i class="fas fa-check-circle" style="margin-right: 10px; color: #4caf50;"></i>Approved & Scheduled
+                </h2>
+            </div>
+            <ul id="approvedDonationsList" style="list-style: none; padding: 0;">
+                <li style="text-align: center; padding: 20px; color: #777;">Loading approved donations...</li>
+            </ul>
+        </section>
+
+        <!-- Completed Donations History -->
+        <section id="completed-donations" class="card">
+            <div class="card-header" style="margin-bottom: 15px;">
+                <h2><i class="fas fa-history" style="margin-right: 10px; color: #3498db;"></i>Recent Completions</h2>
+            </div>
+            <ul id="completedDonationsList" style="list-style: none; padding: 0;">
+                <li style="text-align: center; padding: 20px; color: #777;">Loading history...</li>
+            </ul>
+        </section>
+
+    </main>
+</body>
+
+</html>

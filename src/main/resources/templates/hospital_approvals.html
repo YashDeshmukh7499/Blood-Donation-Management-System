@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Approvals - BloodChain</title>
+    <link rel="stylesheet" href="../static/css/hospital.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-hospital" style="font-size: 2rem; color: #e53935;"></i>
+            </div>
+            <h2>BloodChain</h2>
+        </div>
+
+        <nav class="nav-links">
+            <a href="hospital_dashboard.html">
+                <i class="fas fa-chart-bar"></i>Dashboard Overview
+            </a>
+            <a href="hospital_donations.html">
+                <i class="fas fa-tint"></i>View Donations
+            </a>
+            <a href="hospital_approvals.html" class="active">
+                <i class="fas fa-check-circle"></i>Approve Donations
+            </a>
+            <a href="hospital_requests.html">
+                <i class="fas fa-plus-circle"></i>Request Blood
+            </a>
+            <a href="hospital_blockchain.html">
+                <i class="fas fa-link"></i>Verify Blockchain
+            </a>
+            <a href="hospital_inventory.html">
+                <i class="fas fa-prescription-bottle"></i>Blood Inventory
+            </a>
+            <a href="index.html" class="logout">
+                <i class="fas fa-sign-out-alt"></i>Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <h1>Pending Approvals ✅</h1>
+            <p>Review and verify donation requests or usage logs.</p>
+        </header>
+
+        <!-- Approve Donations -->
+        <section id="approve" class="card">
+            <h2><i class="fas fa-check-circle" style="margin-right: 10px;"></i>Approve / Reject Requests</h2>
+            <table class="block-table">
+                <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Type</th>
+                        <th>Details</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="approvalsTableBody">
+                    <!-- Placeholder data for now, since this logic seems legacy/undefined for Hospital role -->
+                    <tr>
+                        <td colspan="6" style="text-align:center;">No pending approvals found.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <script src="../static/js/hospital_dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Dispatch - BloodChain</title>
+    <link rel="stylesheet" href="/static/css/blood_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="/static/js/bloodbank_dashboard.js" defer></script>
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-prescription-bottle" style="font-size: 2rem; color: #4facfe;"></i>
+            </div>
+            <h2>BloodChain</h2>
+        </div>
+
+        <nav class="nav-links">
+            <a href="bloodbank_dashboard.html">
+                <i class="fas fa-chart-bar"></i>Dashboard Overview
+            </a>
+            <a href="bloodbank_inventory.html">
+                <i class="fas fa-tint"></i>Manage Inventory
+            </a>
+            <a href="bloodbank_donations.html">
+                <i class="fas fa-inbox"></i>Incoming Donations
+            </a>
+            <a href="bloodbank_dispatch.html" class="active">
+                <i class="fas fa-truck"></i>Dispatch / Supply
+            </a>
+            <a href="bloodbank_profile.html">
+                <i class="fas fa-id-card"></i>Bank Profile
+            </a>
+            <a href="bloodbank_blockchain.html">
+                <i class="fas fa-link"></i>Verify Blockchain
+            </a>
+            <a href="index.html" class="logout">
+                <i class="fas fa-sign-out-alt"></i>Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <h1>Dispatch & Supply 🚚</h1>
+            <p>Manage hospital requests and dispatch blood units.</p>
+        </header>
+
+        <!-- Available Components Inventory -->
+        <section id="available-components" class="card">
+            <div class="card-header"
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <h2><i class="fas fa-boxes" style="margin-right: 10px;"></i>Available Blood Components</h2>
+                <button class="btn small" style="background: var(--gradient-primary);"
+                    onclick="loadAvailableComponents()">
+                    <i class="fas fa-sync"></i> Refresh
+                </button>
+            </div>
+
+            <div class="table-container">
+                <table id="componentsTable">
+                    <thead>
+                        <tr>
+                            <th>Component Type</th>
+                            <th>Blood Group</th>
+                            <th>Available Units</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="componentsTableBody">
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px;">Loading components...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Hospital Requests Panel -->
+        <section id="hospital-requests" class="card">
+            <div class="card-header" style="margin-bottom: 15px;">
+                <h2><i class="fas fa-hospital" style="margin-right: 10px;"></i>Hospital Requests</h2>
+            </div>
+            <div id="hospitalRequestsList" style="display: flex; flex-direction: column; gap: 10px;">
+                <!-- Request Items will be injected here -->
+                <div style="text-align: center; padding: 20px; color: #777;">Loading requests...</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rejection Reason Modal -->
+    <div id="rejectionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-times-circle"></i> Reject Blood Request</h2>
+                <span class="close-modal" id="closeRejectionModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p style="margin-bottom: 20px; color: var(--text-light);">Please select a reason for rejecting this
+                    request from <strong><span id="rejectHospitalName">Hospital</span></strong>:</p>
+
+                <div class="reason-options">
+                    <label class="reason-option">
+                        <input type="radio" name="rejectionReason" value="Insufficient stock of this blood group"
+                            checked>
+                        <span>Insufficient stock of this blood group</span>
+                    </label>
+                    <label class="reason-option">
+                        <input type="radio" name="rejectionReason" value="Components not separated yet">
+                        <span>Components not separated yet</span>
+                    </label>
+                    <label class="reason-option">
+                        <input type="radio" name="rejectionReason" value="Emergency units reserved for internal use">
+                        <span>Emergency units reserved for internal use</span>
+                    </label>
+                    <label class="reason-option">
+                        <input type="radio" name="rejectionReason" value="Hospital verification status issues">
+                        <span>Hospital verification status issues</span>
+                    </label>
+                    <label class="reason-option">
+                        <input type="radio" name="rejectionReason" value="Other / Custom">
+                        <span>Other / Custom Reason</span>
+                    </label>
+                </div>
+
+                <div id="customReasonArea" class="custom-reason-area" style="display: none;">
+                    <textarea id="customRejectionReason" rows="3"
+                        placeholder="Enter custom rejection reason..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" style="background: #ccc;" id="cancelRejection">Cancel</button>
+                <button class="btn" style="background: var(--gradient-danger);" id="confirmRejectionBtn">Confirm
+                    Rejection</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

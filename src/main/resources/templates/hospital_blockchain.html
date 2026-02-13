@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Blockchain - BloodChain</title>
+    <link rel="stylesheet" href="../static/css/hospital.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-hospital" style="font-size: 2rem; color: #e53935;"></i>
+            </div>
+            <h2>BloodChain</h2>
+        </div>
+
+        <nav class="nav-links">
+            <a href="hospital_dashboard.html">
+                <i class="fas fa-chart-bar"></i>Dashboard Overview
+            </a>
+            <a href="hospital_donations.html">
+                <i class="fas fa-tint"></i>View Donations
+            </a>
+            <a href="hospital_approvals.html">
+                <i class="fas fa-check-circle"></i>Approve Donations
+            </a>
+            <a href="hospital_requests.html">
+                <i class="fas fa-plus-circle"></i>Request Blood
+            </a>
+            <a href="hospital_blockchain.html" class="active">
+                <i class="fas fa-link"></i>Verify Blockchain
+            </a>
+            <a href="hospital_inventory.html">
+                <i class="fas fa-prescription-bottle"></i>Blood Inventory
+            </a>
+            <a href="index.html" class="logout">
+                <i class="fas fa-sign-out-alt"></i>Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <h1>Blockchain Verification 🔗</h1>
+            <p>Verify the integrity and provenance of blood units.</p>
+        </header>
+
+        <!-- Blockchain Verification Section -->
+        <section id="blockchain" class="card">
+            <h2><i class="fas fa-search" style="margin-right: 10px;"></i>Verify Transaction Hash</h2>
+            <div class="form-group">
+                <label>Enter Blockchain Hash or Blood Unit ID</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" id="verifyInput" placeholder="e.g. 0007ab3ef8..." style="flex: 1;">
+                    <button class="btn" onclick="verifyBlockchain()" style="background: var(--gradient-primary);">
+                        <i class="fas fa-check"></i> Verify
+                    </button>
+                </div>
+            </div>
+            <div id="verificationResult" style="margin-top: 20px; display: none;">
+                <!-- Result populated by JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../static/js/hospital_dashboard.js"></script>
+    <script>
+        // Simple mock verification for now if not in main JS
+        function verifyBlockchain() {
+            const input = document.getElementById('verifyInput').value;
+            const resultDiv = document.getElementById('verificationResult');
+            if (input) {
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = `
+                    <div class="alert success" style="background: #e8f5e9; color: #2e7d32; padding: 15px; border-radius: 8px;">
+                        <i class="fas fa-shield-alt"></i> <strong>Verified!</strong> The hash <code>${input}</code> is valid on the blockchain.
+                        <br><br>
+                        Timestamp: ${new Date().toLocaleString()}<br>
+                        Status: Immutable
+                    </div>
+                `;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

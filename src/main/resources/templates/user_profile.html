@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile - BloodChain</title>
+    <link rel="stylesheet" href="/static/css/user_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-tint" style="font-size: 2rem; color: #e53935;"></i>
+            </div>
+            <h2>BloodChain</h2>
+        </div>
+
+        <nav class="nav-links">
+            <a href="user_dashboard.html">
+                <i class="fas fa-home"></i>Dashboard
+            </a>
+            <a href="user_profile.html" class="active">
+                <i class="fas fa-user"></i>Profile
+            </a>
+            <a href="user_donate.html">
+                <i class="fas fa-tint"></i>Donate Blood
+            </a>
+            <a href="user_blockchain.html">
+                <i class="fas fa-link"></i>Blockchain Records
+            </a>
+            <a href="user_certificates.html">
+                <i class="fas fa-certificate"></i>My Certificates
+            </a>
+            <a href="user_statistics.html">
+                <i class="fas fa-chart-bar"></i>Statistics
+            </a>
+            <a href="#" id="logoutBtn" class="logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <h1>Your Profile 👤</h1>
+            <p>Manage your account details and medical information.</p>
+        </header>
+
+        <!-- Profile Section -->
+        <section id="profile" class="card">
+            <h2><i class="fas fa-user" style="margin-right: 10px;"></i>Profile Details</h2>
+            <div class="profile-info">
+                <!-- User Profile and Personal Statistics -->
+                <p>Loading profile...</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/js/user_dashboard.js"></script>
+
+</body>
+
+</html>

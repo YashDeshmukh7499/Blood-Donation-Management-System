@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Requests - BloodChain</title>
+    <link rel="stylesheet" href="../static/css/hospital.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-hospital" style="font-size: 2rem; color: #e53935;"></i>
+            </div>
+            <h2>BloodChain</h2>
+        </div>
+
+        <nav class="nav-links">
+            <a href="hospital_dashboard.html">
+                <i class="fas fa-chart-bar"></i>Dashboard Overview
+            </a>
+            <a href="hospital_donations.html">
+                <i class="fas fa-tint"></i>View Donations
+            </a>
+            <a href="hospital_approvals.html">
+                <i class="fas fa-check-circle"></i>Approve Donations
+            </a>
+            <a href="hospital_requests.html" class="active">
+                <i class="fas fa-plus-circle"></i>Request Blood
+            </a>
+            <a href="hospital_blockchain.html">
+                <i class="fas fa-link"></i>Verify Blockchain
+            </a>
+            <a href="hospital_inventory.html">
+                <i class="fas fa-prescription-bottle"></i>Blood Inventory
+            </a>
+            <a href="index.html" class="logout">
+                <i class="fas fa-sign-out-alt"></i>Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <h1>Request Blood 🩸</h1>
+            <p>Submit request for blood components from central blood bank.</p>
+        </header>
+
+        <!-- Request Blood Section -->
+        <section id="request-blood" class="card">
+            <h2><i class="fas fa-plus-circle" style="margin-right: 10px;"></i>Request Blood Components</h2>
+            <form id="requestForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label><i class="fas fa-vial"></i> Component Type</label>
+                        <select id="reqComponent" required>
+                            <option value="">Select Component</option>
+                            <option value="RBC">Red Blood Cells (RBC)</option>
+                            <option value="PLASMA">Plasma</option>
+                            <option value="PLATELETS">Platelets</option>
+                            <option value="WHOLE_BLOOD">Whole Blood</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-tint"></i> Blood Group</label>
+                        <select id="reqBloodGroup" required>
+                            <option value="">Select Group</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-sort-numeric-up"></i> Quantity (Units)</label>
+                        <input type="number" id="reqQuantity" min="1" max="10" placeholder="e.g. 2" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-exclamation-circle"></i> Urgency</label>
+                        <select id="reqUrgency" required>
+                            <option value="ROUTINE">Routine</option>
+                            <option value="URGENT">Urgent</option>
+                            <option value="EMERGENCY">Emergency</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn"
+                    style="background: var(--gradient-primary); width: 100%; margin-top: 10px;">
+                    <i class="fas fa-paper-plane"></i> Send Blood Request
+                </button>
+            </form>
+            </form>
+        </section>
+
+        <!-- My Requests History -->
+        <section id="my-requests" class="card">
+            <h2><i class="fas fa-history" style="margin-right: 10px;"></i>Start History</h2>
+            <div class="table-container">
+                <table id="requestsTable">
+                    <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Component / Group</th>
+                            <th>Qty</th>
+                            <th>Urgency</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="7" style="text-align:center;">Loading requests...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../static/js/hospital_dashboard.js"></script>
+
+</body>
+
+</html>

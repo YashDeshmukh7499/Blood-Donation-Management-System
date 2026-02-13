@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Inventory - BloodChain</title>
+    <link rel="stylesheet" href="/static/css/blood_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="/static/js/bloodbank_dashboard.js" defer></script>
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-prescription-bottle" style="font-size: 2rem; color: #4facfe;"></i>
+            </div>
+            <h2>BloodChain</h2>
+        </div>
+
+        <nav class="nav-links">
+            <a href="bloodbank_dashboard.html">
+                <i class="fas fa-chart-bar"></i>Dashboard Overview
+            </a>
+            <a href="bloodbank_inventory.html" class="active">
+                <i class="fas fa-tint"></i>Manage Inventory
+            </a>
+            <a href="bloodbank_donations.html">
+                <i class="fas fa-inbox"></i>Incoming Donations
+            </a>
+            <a href="bloodbank_dispatch.html">
+                <i class="fas fa-truck"></i>Dispatch / Supply
+            </a>
+            <a href="bloodbank_profile.html">
+                <i class="fas fa-id-card"></i>Bank Profile
+            </a>
+            <a href="bloodbank_blockchain.html">
+                <i class="fas fa-link"></i>Verify Blockchain
+            </a>
+            <a href="index.html" class="logout">
+                <i class="fas fa-sign-out-alt"></i>Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <h1>Manage Inventory 🩸</h1>
+            <p>Track blood units, monitor expiry, and update stock levels.</p>
+        </header>
+
+        <!-- Inventory Section -->
+        <section id="inventory" class="card">
+            <div class="card-header"
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <h2><i class="fas fa-flask" style="margin-right: 10px;"></i>Blood Inventory Status</h2>
+                <button class="btn small" style="background: var(--gradient-primary);" onclick="loadBloodInventory()"><i
+                        class="fas fa-sync"></i> Refresh</button>
+            </div>
+
+            <table class="inventory-table" style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="text-align: left; border-bottom: 2px solid #eee;">
+                        <th style="padding: 10px;">Blood Group</th>
+                        <th style="padding: 10px;">Units Available</th>
+                        <th style="padding: 10px;">Status</th>
+                        <th style="padding: 10px;">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryTableBody">
+                    <tr>
+                        <td colspan="4" style="text-align: center; padding: 20px;">Loading inventory...</td>
+                    </tr>
+                </tbody>
+            </table>
+            </table>
+        </section>
+
+        <!-- Detailed Blood Units Table -->
+        <section id="detailed-inventory" class="card">
+            <div class="card-header"
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <h2><i class="fas fa-list" style="margin-right: 10px;"></i>All Blood Units (Detailed)</h2>
+                <button class="btn small" style="background: var(--gradient-primary);"
+                    onclick="loadDetailedInventory()">
+                    <i class="fas fa-sync"></i> Refresh
+                </button>
+            </div>
+
+            <div class="table-container">
+                <table id="detailedInventoryTable">
+                    <thead>
+                        <tr>
+                            <th>Unit ID</th>
+                            <th>Blood Group</th>
+                            <th>Volume (ml)</th>
+                            <th>Collection Date</th>
+                            <th>Expiry Date</th>
+                            <th>Status</th>
+                            <th>Test Status</th>
+                            <th>HIV</th>
+                            <th>HBV</th>
+                            <th>HCV</th>
+                            <th>Storage Location</th>
+                            <th>Storage Temp (°C)</th>
+                            <th>Blockchain Hash</th>
+                        </tr>
+                    </thead>
+                    <tbody id="detailedInventoryBody">
+                        <tr>
+                            <td colspan="13" style="text-align: center; padding: 20px;">Loading detailed inventory...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>

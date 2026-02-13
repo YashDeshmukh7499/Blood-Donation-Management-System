@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certificates - BloodChain</title>
+    <link rel="stylesheet" href="/static/css/user_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-tint" style="font-size: 2rem; color: #e53935;"></i>
+            </div>
+            <h2>BloodChain</h2>
+        </div>
+
+        <nav class="nav-links">
+            <a href="user_dashboard.html">
+                <i class="fas fa-home"></i>Dashboard
+            </a>
+            <a href="user_profile.html">
+                <i class="fas fa-user"></i>Profile
+            </a>
+            <a href="user_donate.html">
+                <i class="fas fa-tint"></i>Donate Blood
+            </a>
+            <a href="user_blockchain.html">
+                <i class="fas fa-link"></i>Blockchain Records
+            </a>
+            <a href="user_certificates.html" class="active">
+                <i class="fas fa-certificate"></i>My Certificates
+            </a>
+            <a href="user_statistics.html">
+                <i class="fas fa-chart-bar"></i>Statistics
+            </a>
+            <a href="#" id="logoutBtn" class="logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <h1>My Certificates 📜</h1>
+            <p>Download and share your verified donation certificates.</p>
+        </header>
+
+        <!-- Certificates -->
+        <section id="certificates" class="card">
+            <h2><i class="fas fa-certificate" style="margin-right: 10px;"></i>Certificate Management</h2>
+            <p>Download your verified donation certificates.</p>
+            <div class="certificate-actions">
+                <button class="btn">
+                    <i class="fas fa-download" style="margin-right: 8px;"></i>
+                    Download Latest Certificate
+                </button>
+                <button class="btn" style="background: var(--gradient-secondary);">
+                    <i class="fas fa-share-alt" style="margin-right: 8px;"></i>
+                    Share Certificate
+                </button>
+                <button class="btn" style="background: linear-gradient(135deg, #4caf50, #45a049);">
+                    <i class="fas fa-history" style="margin-right: 8px;"></i>
+                    View All Certificates
+                </button>
+            </div>
+            <div id="certificateList" style="margin-top: 30px;">
+                <table class="block-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Donation Date</th>
+                            <th>Location</th>
+                            <th>Units (ml)</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="certificateHistoryList">
+                        <tr>
+                            <td colspan="6" style="text-align: center; padding: 20px;">
+                                <div class="text-muted">
+                                    <i class="fas fa-spinner fa-spin"
+                                        style="margin-bottom: 10px; font-size: 1.5rem;"></i>
+                                    <br>Loading certificate history...
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/js/user_dashboard.js"></script>
+
+</body>
+
+</html>

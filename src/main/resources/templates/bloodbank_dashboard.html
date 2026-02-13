@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Dashboard - BloodChain</title>
+    <link rel="stylesheet" href="/static/css/blood_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="/static/js/bloodbank_dashboard.js" defer></script>
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-prescription-bottle" style="font-size: 2rem; color: #4facfe;"></i>
+            </div>
+            <h2>BloodChain</h2>
+        </div>
+
+        <nav class="nav-links">
+            <a href="bloodbank_dashboard.html" class="active">
+                <i class="fas fa-chart-bar"></i>Dashboard Overview
+            </a>
+            <a href="bloodbank_inventory.html">
+                <i class="fas fa-tint"></i>Manage Inventory
+            </a>
+            <a href="bloodbank_donations.html">
+                <i class="fas fa-inbox"></i>Incoming Donations
+            </a>
+            <a href="bloodbank_dispatch.html">
+                <i class="fas fa-truck"></i>Dispatch / Supply
+            </a>
+            <a href="bloodbank_profile.html">
+                <i class="fas fa-id-card"></i>Bank Profile
+            </a>
+            <a href="bloodbank_blockchain.html">
+                <i class="fas fa-link"></i>Verify Blockchain
+            </a>
+            <a href="index.html" class="logout">
+                <i class="fas fa-sign-out-alt"></i>Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <h1>Welcome, <span id="bankName">RedLife Blood Bank</span> 🩸</h1>
+            <p>Monitor donations, manage inventory, and verify blockchain-secured data.</p>
+        </header>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <button class="btn quick-action-btn">
+                <i class="fas fa-sync-alt"></i> Refresh Data
+            </button>
+            <button class="btn quick-action-btn" style="background: var(--gradient-success);">
+                <i class="fas fa-plus"></i> Add Stock
+            </button>
+            <button class="btn quick-action-btn" style="background: var(--gradient-secondary);">
+                <i class="fas fa-file-export"></i> Generate Report
+            </button>
+        </div>
+
+        <!-- Overview Section - Summary Cards -->
+        <section id="overview" class="card" style="background: transparent; box-shadow: none; padding: 0;">
+            <div class="overview-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <!-- 1. Total Registered Donors -->
+                <div class="overview-card">
+                    <div class="card-icon" style="background: rgba(79, 172, 254, 0.1); color: var(--primary);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Total Donors</h3>
+                    <p id="totalDonors">0</p>
+                    <small>Registered & Verified</small>
+                </div>
+
+                <!-- 2. Total Blood Units -->
+                <div class="overview-card">
+                    <div class="card-icon" style="background: rgba(246, 79, 89, 0.1); color: var(--danger);">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Total Units</h3>
+                    <p id="totalUnits">0</p>
+                    <small>Available In Stock</small>
+                </div>
+
+                <!-- 3. Expiring Soon -->
+                <div class="overview-card">
+                    <div class="card-icon" style="background: rgba(255, 159, 67, 0.1); color: var(--warning);">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                    <h3>Expiring Soon</h3>
+                    <p id="expiringSoon">0</p>
+                    <small>In next 7 days</small>
+                </div>
+
+                <!-- 4. Emergency Requests -->
+                <div class="overview-card">
+                    <div class="card-icon" style="background: rgba(231, 76, 60, 0.1); color: #c0392b;">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <h3>Emergency Requests</h3>
+                    <p id="emergencyRequests">0</p>
+                    <small>Action Required</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Charts Placeholder -->
+        <section class="card">
+            <h2><i class="fas fa-chart-line" style="margin-right: 10px;"></i>Inventory Trends</h2>
+            <div
+                style="height: 300px; background: #f8f9fa; display: flex; align-items: center; justify-content: center; color: #666; border-radius: 8px;">
+                <i class="fas fa-chart-area" style="font-size: 3rem; margin-right: 15px; color: #ccc;"></i>
+                <span>Interactive charts would appear here (e.g., Weekly Production vs Dispatch)</span>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>

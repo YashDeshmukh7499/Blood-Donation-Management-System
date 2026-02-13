@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Dashboard - BloodChain</title>
+    <link rel="stylesheet" href="../static/css/hospital.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-hospital" style="font-size: 2rem; color: #e53935;"></i>
+            </div>
+            <h2>BloodChain</h2>
+        </div>
+
+        <nav class="nav-links">
+            <a href="hospital_dashboard.html" class="active">
+                <i class="fas fa-chart-bar"></i>Dashboard Overview
+            </a>
+            <a href="hospital_donations.html">
+                <i class="fas fa-tint"></i>View Donations
+            </a>
+            <a href="hospital_approvals.html">
+                <i class="fas fa-check-circle"></i>Approve Donations
+            </a>
+            <a href="hospital_requests.html">
+                <i class="fas fa-plus-circle"></i>Request Blood
+            </a>
+            <a href="hospital_blockchain.html">
+                <i class="fas fa-link"></i>Verify Blockchain
+            </a>
+            <a href="hospital_inventory.html">
+                <i class="fas fa-prescription-bottle"></i>Blood Inventory
+            </a>
+            <a href="index.html" class="logout">
+                <i class="fas fa-sign-out-alt"></i>Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <h1>Welcome, <span id="hospitalName">CityCare Hospital</span> 🏥</h1>
+            <p>Real-time analytics and blood bank reports.</p>
+        </header>
+
+        <!-- Quick Actions (Reduced) -->
+        <div class="quick-actions">
+            <button class="btn quick-action-btn">
+                <i class="fas fa-sync-alt"></i> Refresh Analytics
+            </button>
+            <button class="btn quick-action-btn" style="background: var(--gradient-secondary);">
+                <i class="fas fa-file-export"></i> Generate Report
+            </button>
+        </div>
+
+        <!-- Overview Section -->
+        <section id="overview" class="card">
+            <h2><i class="fas fa-chart-pie" style="margin-right: 10px;"></i>Analytics Overview</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Total Transfusions</h3>
+                    <p>128</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Pending Requests</h3>
+                    <p>6</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Critical Stock Items</h3>
+                    <p style="color: var(--danger);">2</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Blockchain Verified</h3>
+                    <p class="status-good">100%</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Charts Placeholder -->
+        <section class="card">
+            <h2><i class="fas fa-chart-line" style="margin-right: 10px;"></i>Usage Trends</h2>
+            <div style="height: 300px; padding: 10px;">
+                <canvas id="usageChart"></canvas>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../static/js/hospital_dashboard.js"></script>
+
+</body>
+
+</html>

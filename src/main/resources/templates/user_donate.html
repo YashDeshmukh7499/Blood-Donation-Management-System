@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Blood - BloodChain</title>
+    <link rel="stylesheet" href="/static/css/user_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-tint" style="font-size: 2rem; color: #e53935;"></i>
+            </div>
+            <h2>BloodChain</h2>
+        </div>
+
+        <nav class="nav-links">
+            <a href="user_dashboard.html">
+                <i class="fas fa-home"></i>Dashboard
+            </a>
+            <a href="user_profile.html">
+                <i class="fas fa-user"></i>Profile
+            </a>
+            <a href="user_donate.html" class="active">
+                <i class="fas fa-tint"></i>Donate Blood
+            </a>
+            <a href="user_blockchain.html">
+                <i class="fas fa-link"></i>Blockchain Records
+            </a>
+            <a href="user_certificates.html">
+                <i class="fas fa-certificate"></i>My Certificates
+            </a>
+            <a href="user_statistics.html">
+                <i class="fas fa-chart-bar"></i>Statistics
+            </a>
+            <a href="#" id="logoutBtn" class="logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <h1>Donate Blood 🩸</h1>
+            <p>Schedule a new donation or find blood banks needing your group.</p>
+        </header>
+
+        <!-- Main Content Area with Blood Bank Sidebar -->
+        <div class="content-with-sidebar">
+            <div class="main-section">
+                <!-- Nearby Blood Banks Section -->
+                <section id="nearby-banks" class="card">
+                    <h2><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>Find Nearby Blood Banks</h2>
+                    <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                        <input type="text" id="citySearch" placeholder="Enter City (e.g., Pune, Mumbai)"
+                            style="flex: 1; padding: 10px;">
+                        <button class="btn" onclick="searchBloodBanks()">Search</button>
+                    </div>
+                    <div id="bloodBankList">
+                        <p class="text-muted">Enter a city to find blood banks near you.</p>
+                    </div>
+                </section>
+
+                <!-- Donation Request Form -->
+                <section id="donate" class="card" style="display: none;">
+                    <h2><i class="fas fa-calendar-check" style="margin-right: 10px;"></i>Schedule Donation Appointment
+                    </h2>
+                    <p id="bookingTitle">Booking appointment at: <strong>Select a blood bank first</strong></p>
+                    <form id="donationForm">
+                        <input type="hidden" id="bloodBankId" required>
+                        <div>
+                            <label for="location">Blood Bank Name</label>
+                            <input type="text" id="location" readonly required style="background: #f0f0f0;">
+                        </div>
+                        <div>
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div>
+                            <label for="donationType">Donation Type</label>
+                            <select id="donationType" required>
+                                <option value="WHOLE_BLOOD">Whole Blood (Standard)</option>
+                                <option value="RBC">Red Blood Cells (Apheresis)</option>
+                                <option value="PLASMA">Plasma (Apheresis)</option>
+                                <option value="PLATELETS">Platelets (Apheresis)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="health">Health Declaration</label>
+                            <select id="health" required>
+                                <option value="">Do you have any recent illness?</option>
+                                <option value="none">No, I am healthy</option>
+                                <option value="cold">Yes, Cold/Flu</option>
+                                <option value="medication">Yes, on Medication</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+                            Confirm Appointment
+                        </button>
+                        <button type="button" class="btn" style="background: #ccc; margin-top: 10px;"
+                            onclick="document.getElementById('donate').style.display='none'">Cancel</button>
+                    </form>
+                </section>
+            </div>
+
+            <!-- Right Section (40%) - All Blood Banks List -->
+            <aside class="blood-bank-sidebar">
+                <div class="card"
+                    style="position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto;">
+                    <h2><i class="fas fa-hospital" style="margin-right: 10px;"></i>All Blood Banks</h2>
+                    <p style="font-size: 0.9rem; color: #666;">Browse all registered blood banks</p>
+                    <div id="allBloodBanksList">
+                        <p class="text-muted">Loading blood banks...</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="/static/js/user_dashboard.js"></script>
+
+</body>
+
+</html>
