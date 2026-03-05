@@ -6,7 +6,7 @@ The Blockchain-Based Secure Blood Donation Management System is a web-based appl
 The system helps hospitals, blood banks, and donors to manage blood inventory efficiently while maintaining data security and authenticity.
 
 
-🎯 Objective
+🎯 Objectives
 
 To provide secure storage of blood donation records using blockchain.
 
