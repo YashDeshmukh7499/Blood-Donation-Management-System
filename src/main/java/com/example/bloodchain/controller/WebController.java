@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class WebController {
 
-    // 🏠 Home
+
     @GetMapping("/")
     public String index() {
         return "index";
@@ -17,7 +17,7 @@ public class WebController {
         return "index";
     }
 
-    // 🔐 Auth Pages
+
     @GetMapping("/user_login.html")
     public String userLogin() {
         return "user_login";
@@ -59,7 +59,6 @@ public class WebController {
         return "user_dashboard";
     }
 
-    // 🩸 Donor Sub-pages
     @GetMapping("/user_profile.html")
     public String userProfile() {
         return "user_profile";
@@ -90,7 +89,7 @@ public class WebController {
         return "hospital_dashboard";
     }
 
-    // 🏥 Hospital Sub-pages
+    
     @GetMapping("/hospital_donations.html")
     public String hospitalDonations() {
         return "hospital_donations";
@@ -121,7 +120,7 @@ public class WebController {
         return "bloodbank_dashboard";
     }
 
-    // 🩸 Blood Bank Sub-pages
+
     @GetMapping("/bloodbank_inventory.html")
     public String bloodBankInventory() {
         return "bloodbank_inventory";
@@ -147,7 +146,7 @@ public class WebController {
         return "admin_dashboard";
     }
 
-    // 🏥 Profile Pages
+ 
     @GetMapping("/bloodbank_profile.html")
     public String bloodBankProfile() {
         return "bloodbank_profile";
